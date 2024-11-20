@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "60861527054",
+    "project_id": "elitetimeapp",
+    "storage_bucket": "elitetimeapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:60861527054:android:c2ae346055aa09b320f85f",
+        "android_client_info": {
+          "package_name": "com.zerdasoftware.elitetime"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfAQ65hZTPgbhq-1y9sIHIDU0ohLYiOQ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
