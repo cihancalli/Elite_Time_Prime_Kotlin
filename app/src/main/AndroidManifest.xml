@@ -13,7 +13,11 @@
         android:theme="@style/Theme.EliteTime"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.BaseActivity"
+            android:exported="false"
+            android:theme="@style/Theme.EliteTime" />
+        <activity
+            android:name=".activity.IntroActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +25,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
