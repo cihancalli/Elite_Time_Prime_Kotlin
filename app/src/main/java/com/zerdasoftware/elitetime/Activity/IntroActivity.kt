@@ -1,4 +1,4 @@
-package com.zerdasoftware.elitetime.activity
+package com.zerdasoftware.elitetime.Activity
 
 import android.content.Intent
 import android.os.Bundle

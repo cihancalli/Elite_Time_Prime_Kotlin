@@ -1,4 +1,4 @@
-package com.zerdasoftware.elitetime
+package com.zerdasoftware.elitetime.Adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -11,6 +11,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterInside
 import com.bumptech.glide.request.RequestOptions
 import com.zerdasoftware.elitetime.Model.SliderModel
+import com.zerdasoftware.elitetime.R
 
 class SliderAdapter(
     private var sliderItems: List<SliderModel>,
