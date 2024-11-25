@@ -3,14 +3,15 @@ package com.zerdasoftware.elitetime.Activity
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import com.zerdasoftware.elitetime.Adapter.BrandAdapter
+import com.zerdasoftware.elitetime.Adapter.ItemAdapter
 import com.zerdasoftware.elitetime.Model.SliderModel
 import com.zerdasoftware.elitetime.Adapter.SliderAdapter
-import com.zerdasoftware.elitetime.Model.BrandModel
 import com.zerdasoftware.elitetime.ViewModel.MainViewModel
 import com.zerdasoftware.elitetime.databinding.ActivityMainBinding
 
@@ -25,7 +26,19 @@ class MainActivity : BaseActivity() {
 
         initBanner()
         initBrand()
+        initItem()
 
+    }
+
+    private fun initItem() {
+        binding.progressBarItem.visibility = View.VISIBLE
+        viewModel.items.observe(this, Observer {
+            binding.viewItem.layoutManager = GridLayoutManager(this@MainActivity,2)
+            binding.viewItem.adapter = ItemAdapter(it)
+            binding.progressBarItem.visibility = View.GONE
+
+        })
+        viewModel.loadItems()
     }
 
     private fun initBrand() {
@@ -37,7 +50,7 @@ class MainActivity : BaseActivity() {
             binding.progressBarBrand.visibility = View.GONE
 
         })
-        viewModel.loadBrand()
+        viewModel.loadBrands()
     }
 
     private fun initBanner() {
