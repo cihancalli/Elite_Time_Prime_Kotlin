@@ -8,7 +8,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.zerdasoftware.elitetime.Model.BrandModel
-import com.zerdasoftware.elitetime.Model.ItemModel
+import com.zerdasoftware.elitetime.Model.ItemsModel
 import com.zerdasoftware.elitetime.Model.SliderModel
 
 class MainViewModel() : ViewModel() {
@@ -17,11 +17,11 @@ class MainViewModel() : ViewModel() {
 
     private val _banner = MutableLiveData<List<SliderModel>>()
     private val _brand = MutableLiveData<MutableList<BrandModel>>()
-    private val _item = MutableLiveData<MutableList<ItemModel>>()
+    private val _item = MutableLiveData<MutableList<ItemsModel>>()
 
     val banners: LiveData<List<SliderModel>> = _banner
     val brands: LiveData<MutableList<BrandModel>> = _brand
-    val items: LiveData<MutableList<ItemModel>> = _item
+    val items: LiveData<MutableList<ItemsModel>> = _item
 
     fun loadBanners() {
         val Ref = firebaseDatabase.getReference("Banner")
@@ -68,9 +68,9 @@ class MainViewModel() : ViewModel() {
         val Ref = firebaseDatabase.getReference("Items")
         Ref.addValueEventListener(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                val lists = mutableListOf<ItemModel>()
+                val lists = mutableListOf<ItemsModel>()
                 for (childSnapshot in snapshot.children) {
-                    val list = childSnapshot.getValue(ItemModel::class.java)
+                    val list = childSnapshot.getValue(ItemsModel::class.java)
                     if (list != null) {
                         lists.add(list)
                     }

@@ -9,10 +9,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterInside
 import com.bumptech.glide.request.RequestOptions
-import com.zerdasoftware.elitetime.Model.ItemModel
+import com.zerdasoftware.elitetime.Activity.DetailActivity
+import com.zerdasoftware.elitetime.Model.ItemsModel
 import com.zerdasoftware.elitetime.databinding.ViewholderRecommendedBinding
 
-class ItemAdapter(val items: MutableList<ItemModel>) :
+class ItemAdapter(val items: MutableList<ItemsModel>) :
     RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
 
     private var context: Context? = null
@@ -42,9 +43,11 @@ class ItemAdapter(val items: MutableList<ItemModel>) :
             .apply(requestOptions)
             .into(holder.binding.pic)
 
-//        holder.itemView.setOnClickListener {
-//            val intent = Intent(holder.itemView.context,)
-//        }
+        holder.itemView.setOnClickListener {
+            val intent = Intent(holder.itemView.context,DetailActivity::class.java)
+            intent.putExtra("object",items[position])
+            holder.itemView.context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int = items.size
