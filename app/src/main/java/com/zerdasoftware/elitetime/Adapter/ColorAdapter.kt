@@ -2,15 +2,11 @@ package com.zerdasoftware.elitetime.Adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.content.res.ColorStateList
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.core.widget.ImageViewCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.zerdasoftware.elitetime.R
-import com.zerdasoftware.elitetime.databinding.ViewholderBrandBinding
 import com.zerdasoftware.elitetime.databinding.ViewholderColorBinding
 
 class ColorAdapter(val items: MutableList<String>) :

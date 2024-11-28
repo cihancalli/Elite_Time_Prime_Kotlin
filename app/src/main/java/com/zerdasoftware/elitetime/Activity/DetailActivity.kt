@@ -1,9 +1,11 @@
+@file:Suppress("DEPRECATION")
+
 package com.zerdasoftware.elitetime.Activity
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.zerdasoftware.elitetime.Adapter.ColorAdapter
 import com.zerdasoftware.elitetime.Adapter.SizeAdapter
 import com.zerdasoftware.elitetime.Adapter.SliderAdapter
@@ -67,6 +69,7 @@ class DetailActivity : BaseActivity() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun getBundle() {
         item = intent.getParcelableExtra("object")!!
 
