@@ -1,5 +1,6 @@
 package com.zerdasoftware.elitetime.Activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.Observer
@@ -27,6 +28,10 @@ class MainActivity : BaseActivity() {
         initBanner()
         initBrand()
         initItem()
+
+        binding.cartBtn.setOnClickListener {
+            startActivity(Intent(this@MainActivity,CartActivity::class.java))
+        }
 
     }
 

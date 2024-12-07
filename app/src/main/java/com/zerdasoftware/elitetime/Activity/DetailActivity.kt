@@ -3,6 +3,7 @@
 package com.zerdasoftware.elitetime.Activity
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -83,7 +84,7 @@ class DetailActivity : BaseActivity() {
         }
         binding.backBtn.setOnClickListener { finish() }
         binding.cartBtn.setOnClickListener {
-
+            startActivity(Intent(this@DetailActivity,CartActivity::class.java))
         }
 
     }
